@@ -24,9 +24,14 @@ SOFTWARE.
 
 import sys
 
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
+try:
+    from PyQt5.QtCore import *
+    from PyQt5.QtGui import *
+    from PyQt5.QtWidgets import *
+except ImportError:
+    from PySide2.QtCore import *
+    from PySide2.QtGui import *
+    from PySide2.QtWidgets import *
 
 from pyqtspinner.spinner import WaitingSpinner
 
@@ -210,4 +215,7 @@ class Demo(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Demo()
-    sys.exit(app.exec())
+    try:
+        sys.exit(app.exec())
+    except AttributeError:
+        sys.exit(app.exec_())
