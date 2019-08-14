@@ -10,6 +10,10 @@ QtWaitingSpinner is a highly configurable, custom Qt widget for showing "waiting
 
 `pip install pyqtspinner`
 
+### Requirements
+
+QtWaitingSpinner needs [PySide2](https://pypi.org/project/PySide2/) or [PyQt](https://pypi.org/project/PyQt5/) to be installed.
+
 ### Configuration
 
 The following properties can all be controlled directly through their corresponding setters:
